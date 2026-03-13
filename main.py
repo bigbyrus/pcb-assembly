@@ -4,9 +4,9 @@ from analogio import AnalogIn
 import time
 import pwmio
 
-    #led = DigitalInOut(pin)
-    #led.direction = Direction.OUTPUT
-    #leds.append(led)
+from adafruit_ble import BLERadio
+from adafruit_ble.advertising.standard import ProvideServicesAdvertisement
+from adafruit_ble.services.nordic import UARTService
 
 
 # setup pins
