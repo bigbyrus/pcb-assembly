@@ -1,3 +1,4 @@
-Adafruit CircuitPython 9.0.0-alpha.1-42-ge39fbf1b26 on 2023-09-18; EnVision-Mini-DevBoard with ESP32S3
-Board ID:envision_mini_devboard
+Adafruit CircuitPython 10.1.4 on 2026-03-09; ESP32-S3-DevKitC-1-N8 with ESP32S3
+Board ID:espressif_esp32s3_devkitc_1_n8
 UID:84722E2E2DC8
+MAC:B4:8C:CB:3F:D0:C9
