@@ -13,6 +13,32 @@ ble = BLERadio()
 uart = UARTService()
 advertisement = ProvideServicesAdvertisement(uart)
 
+def flash_all_leds(leds):
+    for _ in range(2):
+        for led in leds:
+            led.value = True
+        time.sleep(0.25)
+
+        # Turn all LEDs OFF
+        for led in leds:
+            led.value = False
+        time.sleep(0.25)
+
+def update_leds(leds, num_leds):
+    # Always keep first LED ON
+    leds[0].value = True
+
+    # Clamp num_leds to valid range
+    if num_leds < 1:
+        num_leds = 1
+    elif num_leds > len(leds):
+        num_leds = len(leds)
+
+    # Update remaining LEDs
+    for i in range(1, len(leds)):
+        leds[i].value = (i < num_leds)
+
+
 try:
     microcontroller.pin.GPIO33.deinit()
 except:
@@ -37,9 +63,10 @@ for pin in led_pins:
     led.direction = Direction.OUTPUT
     leds.append(led)
 
+ble.start_advertising(advertisement)
+
 # main loop
 while True:
-    ble.start_advertising(advertisement)
     print("Waiting to connect")
     while not ble.connected:
         for i, led in enumerate(leds):
@@ -48,5 +75,11 @@ while True:
         pass
 
     print("Connected")
+    flash_all_leds(leds)
     while ble.connected:
-         print("mhm")
+        data = uart.read(2)
+        if len(data) == 2:
+            adc_value = data[0] | (data[1] << 8)
+            num_leds = max(1, (adc_value * len(leds)) // 4095)
+            update_leds(leds, num_leds)
+        uart.write("Received ADC value: ", adc_value)
