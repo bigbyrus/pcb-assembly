@@ -22,23 +22,20 @@ def flash_all_leds(leds):
         # Turn all LEDs OFF
         for led in leds:
             led.value = False
-        time.sleep(0.25)
+        time.sleep(0.5)
 
 def update_leds(leds, num_leds):
-    # Always keep first LED ON
     leds[0].value = True
 
-    # Clamp num_leds to valid range
     if num_leds < 1:
         num_leds = 1
     elif num_leds > len(leds):
         num_leds = len(leds)
 
-    # Update remaining LEDs
     for i in range(1, len(leds)):
         leds[i].value = (i < num_leds)
 
-
+#GPIO33 doesn't work sometimes as its not defined in the .uf2
 try:
     microcontroller.pin.GPIO33.deinit()
 except:
@@ -82,4 +79,5 @@ while True:
             adc_value = data[0] | (data[1] << 8)
             num_leds = max(1, (adc_value * len(leds)) // 4095)
             update_leds(leds, num_leds)
-        uart.write("Received ADC value: ", adc_value)
+        # handshake 
+        uart.write("Received ADC value")
