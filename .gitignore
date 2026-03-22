@@ -1,3 +1,6 @@
+.gitignore
 .Trash-1000
 .Trashes
 .metadata_never_index
+.fseventsd
+sd
