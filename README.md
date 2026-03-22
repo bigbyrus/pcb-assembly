@@ -11,7 +11,7 @@ Using solder paste and a stencil, the PCB was fabricated using the following sur
 <p> </p>
 
 <p>
-  To be able to program the ESP32 microcontroller, external circuitry was required. This included the USB-C port, ESD protection diodes, Voltage Regulator IC, etc. Fortunately, the ESP32-S3-MINI-1 has an on-chip USB Serial/JTAG Controller, so we can flash the microcontroller without too much external circuitry. 
+  To be able to program the ESP32 microcontroller, external circuitry was required. This included the USB-C port, ESD protection diodes, Voltage Regulator IC, etc. Fortunately, the ESP32-S3-MINI-1 has an on-chip USB Serial/JTAG Controller. 
 </p>
 
 <p align="center">
@@ -22,7 +22,7 @@ Using solder paste and a stencil, the PCB was fabricated using the following sur
 ---
 
 <p>
-  After placing all components on their respective pads, I heated my PCB in the reflow oven in UCSD's EnVision MakerSpace for 20 minutes. This was the outcome:
+  After placing all components on their respective pads, I heated my PCB in the reflow oven at UCSD's EnVision MakerSpace for 20 minutes. This was the outcome:
 </p>
 
 <p align="center">
@@ -52,7 +52,7 @@ Using solder paste and a stencil, the PCB was fabricated using the following sur
 ### **Verifying Device Functionality**
 
 In code.py, the correctness of the design is validated by executing a BLE program that receives analog data from a [BLE Central Device](https://github.com/bigbyrus/ble-project) using the Nordic UART Service. To visually verify that the analog signals are being received
-correctly, I soldered female pin holders to the exposed pins on the PCB, and connected the "VU Shield" supplied by UCSD's EnVision Makerspace
+correctly, I soldered female pin holders to the exposed pins on the PCB, and connected the "VU Shield" with parts supplied by UCSD's EnVision Makerspace
 
 <p>
   <em>VU Shield</em><br>
