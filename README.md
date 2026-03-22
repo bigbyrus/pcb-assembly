@@ -5,7 +5,7 @@ Using solder paste and a stencil, the PCB was fabricated using the following sur
 </p>
 
 <p align="center">
-  <img src="/bom-esp32s3mini.png" width="400">
+  <img src="img/bom-esp32s3mini.png" width="400">
 </p>
 
 <p> </p>
@@ -15,8 +15,8 @@ Using solder paste and a stencil, the PCB was fabricated using the following sur
 </p>
 
 <p align="center">
-  <img src="/schm.png" width="750"><br>
-  <img src="/pcb_layout.png" width="500">
+  <img src="img/schm.png" width="750"><br>
+  <img src="img/pcb_layout.png" width="500">
 </p>
 
 ---
@@ -26,7 +26,7 @@ Using solder paste and a stencil, the PCB was fabricated using the following sur
 </p>
 
 <p align="center">
-  <img src="/esp32-s3-mini-1.png" width="300">
+  <img src="img/esp32-s3-mini-1.png" width="300">
 </p>
 
 ---
@@ -39,7 +39,7 @@ Using solder paste and a stencil, the PCB was fabricated using the following sur
 </p>
 
 <p align="center">
-  <img src="/bootmode.png" width="400">
+  <img src="img/bootmode.png" width="400">
 </p>
 
 <p>
@@ -56,10 +56,10 @@ correctly, I soldered female pin holders to the exposed pins on the PCB, and con
 
 <p>
   <em>VU Shield</em><br>
-  <img src="/vumeter.png" width="400">
+  <img src="img/vumeter.png" width="400">
 </p>
 
 ---
 
 
-![Demo](IMG_1625gif.gif)
+![Demo](img/IMG_1625gif.gif)
